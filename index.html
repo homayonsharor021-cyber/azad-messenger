@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#176b59"><link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/style.css"><title>پیام‌رسان آزاد</title>
+</head>
+<body>
+<div class="shell">
+  <header><div class="logo">آ</div><div><h1>پیام‌رسان آزاد</h1><small>گفت‌وگوی ساده، بدون شماره و ایمیل</small></div><button id="logout" class="ghost hidden">خروج</button></header>
+  <section id="auth" class="panel">
+    <h2>ورود یا ساخت حساب</h2><p class="muted">فقط نام کاربری و رمز عبور لازم است.</p>
+    <label>نام کاربری</label><input id="username" autocomplete="username" placeholder="مثلاً ali_123">
+    <label>رمز عبور</label><input id="password" type="password" autocomplete="current-password" placeholder="حداقل ۶ کاراکتر">
+    <div class="actions"><button id="login">ورود</button><button id="register" class="secondary">ساخت حساب</button></div>
+    <p id="authMsg" class="notice"></p>
+  </section>
+  <section id="app" class="workspace hidden">
+    <aside><h3>کاربران</h3><input id="userSearch" placeholder="جست‌وجوی نام کاربری"><div id="users"></div></aside>
+    <main><div id="empty" class="empty">برای شروع، یک کاربر را انتخاب کنید.</div>
+      <div id="chat" class="hidden">
+        <div class="chathead"><b id="chatName"></b><span class="muted">گفت‌وگوی خصوصی</span></div>
+        <div id="messages"></div>
+        <div class="composer"><textarea id="text" rows="2" placeholder="پیام خود را بنویسید..."></textarea>
+          <div class="tools"><label class="attach">پیوست فایل<input id="file" type="file" hidden></label>
+          <button id="record" class="secondary">ضبط ویس</button><button id="send">ارسال</button></div>
+          <small id="fileName" class="muted"></small><small id="recordState" class="muted"></small>
+        </div>
+      </div>
+    </main>
+  </section>
+  <footer>نسخه آزمایشی اولیه • برای استفاده از راه دور باید روی سرور اینترنتی امن نصب شود.</footer>
+</div>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
